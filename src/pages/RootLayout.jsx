@@ -1,13 +1,12 @@
-import React from "react";
-import NavigationBar from "../components/NavigationBar";
 import { Outlet } from "react-router-dom";
-import classes from "./RootLayout.module.css";
+
+import NavigationBar from "../components/NavigationBar";
 
 export const RootLayout = () => {
   return (
     <>
       <NavigationBar />
-      <main className={classes.content}>
+      <main>
         <Outlet />
       </main>
     </>
