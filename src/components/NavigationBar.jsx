@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import classes from "./NavigationBar.module.css";
 const NavigationBar = () => {
   return (
@@ -7,11 +8,26 @@ const NavigationBar = () => {
       <header className={classes.header}>
         <nav className={classes.list}>
           <ul>
-            <li >
-              <Link to="/">Home</Link>
+            <li>
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                Home
+              </NavLink>
             </li>
-            <li >
-              <Link to="/products">Products</Link>
+            <li>
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                Products
+              </NavLink>
             </li>
           </ul>
         </nav>
